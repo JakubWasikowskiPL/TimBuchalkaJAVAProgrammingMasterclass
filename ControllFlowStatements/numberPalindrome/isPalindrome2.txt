@@ -1,0 +1,27 @@
+public static void main(String[] args) {
+        System.out.println(isPalindrome(-121));
+        System.out.println(isPalindrome(223));
+
+    }
+    public static boolean isPalindrome(int number){
+                int reverse=numberReverser(number);
+                if(number==reverse){
+                    return true;
+                }else{
+                    return false;
+                }
+    }
+    public static int numberReverser(int number){
+
+        int reverse=0;
+        System.out.println("Oryginal number is equal= "+number);
+        while(Math.abs(number)>0) {
+            int lastDigit=number%10;
+            reverse = (reverse * 10) + lastDigit;
+            number/=10;
+        }
+        System.out.println("Reversed number is equal= "+reverse);
+        return reverse;
+    }
+
+}
